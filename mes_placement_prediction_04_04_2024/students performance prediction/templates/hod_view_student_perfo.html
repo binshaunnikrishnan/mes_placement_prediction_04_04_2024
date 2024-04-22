@@ -1,0 +1,67 @@
+{% include 'hod_header.html'%}
+
+
+<div class="inner-banner py-5">
+    <section class="w3l-breadcrumb text-left py-sm-5 ">
+        <div class="container">
+            <!-- <div class="w3breadcrumb-gids">
+                <div class="w3breadcrumb-left text-left">
+                    <h2 class="inner-w3-title mt-lg-5 mt-4">
+                        Services </h2>
+
+                </div>
+                <div class="w3breadcrumb-right">
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="/hod_home">Home</a></li>
+                        <li class="active"><span class="fas fa-arrow-right mx-2"></span> Services </li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+</div>
+
+
+
+
+<!-- features-section -->
+<section class="w3l-features py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="title-content text-center mb-lg-3 mb-4">
+            <h6 class="title-subw3hny mb-1">What We Do</h6>
+            <h3 class="title-w3l">Our Services</h3>
+        </div>
+        <div class="main-cont-wthree-2">
+            <div class="row justify-content-center">
+                <table align="center" class="table table-striped">
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Student name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Subject Name</th>
+                        <th>Predicted Output</th>
+                        <th>details</th>
+                    </tr>
+                    {% for row in data['view']%}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{row['student_name']}}</td>
+                        <td>{{row['email']}}</td>
+                        <td>{{row['phone']}}</td>
+                        <td>{{row['subject_name']}}</td>
+                        <td>{{row['output']}}</td>
+                        <td>{{row['details']}}</td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//features-section -->
+
+
+
+{% include 'footer.html'%}

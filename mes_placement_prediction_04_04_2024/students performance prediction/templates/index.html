@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Score Prediction</title>
+</head>
+<body>
+    <h1>Score Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+        <label for="internal_score">Internal score:</label>
+        <input type="number" name="internal_score"><br><br>
+
+        <label for="attendance_score">Attendance score:</label>
+        <input type="number" name="attendance_score"><br><br>
+
+        <label for="performance_score">Performance score:</label>
+        <input type="number" name="performance_score"><br><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html

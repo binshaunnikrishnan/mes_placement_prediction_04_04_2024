@@ -1,0 +1,82 @@
+ <!--footer section start-->
+ <footer>
+    <p>&copy 2016 Augment . All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts.</a></p>
+ </footer>
+<!--footer section end-->
+</div>
+</div>
+<!--//content-inner-->
+<!--/sidebar-menu-->
+<div class="sidebar-menu">
+<header class="logo">
+<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h1>Augment</h1></span> 
+<!--<img id="logo" src="" alt="Logo"/>--> 
+</a> 
+</header>
+<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+<!--/down-->
+<div class="down">	
+<a href="student_home"><img src="/static/assets3/images/admin.jpg"></a>
+<a href="student_home"><span class=" name-caret">Jasmin Leo</span></a>
+<p>Student</p>
+<ul>
+ <li><a class="tooltips" href="student_home"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+ <li><a class="tooltips" href="/"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+ </ul>
+</div>
+<!--//down-->
+<div class="menu">
+<ul id="menu" >
+ <li><a href="student_home"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+  <li id="menu-academico" ><a href="#"><i class="fa fa-table"></i> <span> View</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+    <ul id="menu-academico-sub" >
+     <li id="menu-academico-avaliacoes" ><a href="view_subject"> Subjects</a></li>
+     <li id="menu-academico-boletim" ><a href="ask_doubts">Doubts</a></li>
+     <li id="menu-academico-boletim" ><a href="view_recommended">View Reccomended Jobs</a></li>
+     <li id="menu-academico-boletim" ><a href="student_question">Career Prediction</a></li>
+     <li id="menu-academico-boletim" ><a href="view_perfo">Performance Prediction</a></li>
+
+     
+   </ul>
+ </li>
+ 
+
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>		
+</div>
+<script>
+var toggle = true;
+ 
+$(".sidebar-icon").click(function() {                
+if (toggle)
+{
+$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+$("#menu span").css({"position":"absolute"});
+}
+else
+{
+$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+setTimeout(function() {
+$("#menu span").css({"position":"relative"});
+}, 400);
+}
+     
+     toggle = !toggle;
+ });
+</script>
+<!--js -->
+<link rel="stylesheet" href="/static/assets3/css/vroom.css">
+<script type="text/javascript" src="/static/assets3/js/vroom.js"></script>
+<script type="text/javascript" src="/static/assets3/js/TweenLite.min.js"></script>
+<script type="text/javascript" src="/static/assets3/js/CSSPlugin.min.js"></script>
+<script src="/static/assets3/js/jquery.nicescroll.js"></script>
+<script src="/static/assets3/js/scripts.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/assets3/js/bootstrap.min.js"></script>
+</body>
+</html>

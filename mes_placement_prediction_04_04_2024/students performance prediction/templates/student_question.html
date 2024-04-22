@@ -1,0 +1,175 @@
+{% include 'student_header.html'%}
+<br>
+<br>
+<div></div>
+<div class="container" style="max-height: 80vh; overflow-y: scroll;">
+    <h1>Enter Your Details:</h1>
+    <form action="submit_form.py" method="post">
+      <label for="os">Percentage in Operating Systems (0-100):</label>
+      <input type="number" name="os" id="os" min="0" max="100" required><br>
+
+      <label for="alg">Percentage in Algorithms (0-100):</label>
+      <input type="number" name="alg" id="alg" min="0" max="100" required><br>
+
+      <label for="pc">Percentage in Programming Concepts (0-100):</label>
+      <input type="number" name="pc" id="pc" min="0" max="100" required><br>
+
+      <label for="se">Percentage in Software Engineering (0-100):</label>
+      <input type="number" name="se" id="se" min="0" max="100" required><br>
+
+      <label for="cn">Percentage in Computer Networks (0-100):</label>
+      <input type="number" name="cn" id="cn" min="0" max="100" required><br>
+
+      <label for="es">Percentage in Electronics Subjects (0-100):</label>
+      <input type="number" name="es" id="es" min="0" max="100" required><br>
+
+      <label for="ca">Percentage in Computer Architecture (0-100):</label>
+      <input type="number" name="ca" id="ca" min="0" max="100" required><br>
+
+      <label for="math">Percentage in Mathematics (0-100):</label>
+      <input type="number" name="math" id="math" min="0" max="100" required><br>
+
+      <label for="comm">Percentage in Communication Skills (0-100):</label>
+      <input type="number" name="comm" id="comm" min="0" max="100" required><br>
+
+      <label for="hours">Hours Working per Day (0-24):</label>
+      <input type="number" name="hours" id="hours" min="0" max="24" required><br>
+
+      <label for="lq">Logical Quotient Rating (0-5):</label>
+      <input type="number" name="lq" id="lq" min="0" max="5" required><br>
+
+      <label for="hack">Number of Hackathons Attended:</label>
+      <input type="number" name="hack" id="hack" min="0" required><br>
+
+      <label for="cs">Coding Skills Rating (0-5):</label>
+      <input type="number" name="cs" id="cs" min="0" max="5" required><br>
+
+      <label for="ps">Public Speaking Points (0-5):</label>
+      <input type="number" name="ps" id="ps" min="0" max="5" required><br>
+
+      <label for="long">Can You Work Long Hours Before Computer:</label>
+      <input type="radio" name="long" id="long-yes" value="yes" required>
+      <label for="long-yes">Yes</label>
+      <input type="radio" name="long" id="long-no" value="no" required>
+      <label for="long-no">No</label><br>
+
+      <label for="learn">Do You Have Self-Learning Capability:</label>
+      <input type="radio" name="learn" id="learn-yes" value="yes" required>
+      <label for="learn-yes">Yes</label>
+      <input type="radio" name="learn" id="learn-no" value="no" required>
+      <label for="learn-no">No</label><br>
+    
+      <label for="ec">Number of Extra-Courses/Certifications Done:</label>
+      <input type="number" name="ec" id="ec" min="0" required><br>
+    
+      <label for="workshops">Number of Workshops/Training Attended:</label>
+      <input type="number" name="workshops" id="workshops" min="0" required><br>
+    
+      <label for="talent">Number of Technical Talent Tests Taken:</label>
+      <input type="number" name="talent" id="talent" min="0" required><br>
+    
+      <label for="olymp">Number of Olympiads Participated:</label>
+      <input type="number" name="olymp" id="olymp" min="0" required><br>
+    
+      <label for="rw">Rate Your Reading and Writing Skills (0-5):</label>
+      <input type="number" name="rw" id="rw" min="0" max="5" required><br>
+    
+      <label for="mem">Memory Capability Score (0-10):</label>
+      <input type="number" name="mem" id="mem" min="0" max="10" required><br>
+    
+      <label for="higher">Do You Want to Pursue Higher Studies:</label>
+      <input type="radio" name="higher" id="higher-yes" value="yes" required>
+      <label for="higher-yes">Yes</label>
+      <input type="radio" name="higher" id="higher-no" value="no" required>
+      <label for="higher-no">No</label><br>
+    
+      <input type="submit" value="Submit">
+          <br><br><br><br><br><br><br><br><br><br>
+
+    </form>
+ </div>
+ 
+
+<br><br><br><br><br>
+
+ <!--footer section start-->
+ 
+<!--footer section end-->
+</div>
+</div>
+<!--//content-inner-->
+<!--/sidebar-menu-->
+<div class="sidebar-menu">
+<header class="logo">
+<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h1>Augment</h1></span> 
+<!--<img id="logo" src="" alt="Logo"/>--> 
+</a> 
+</header>
+<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+<!--/down-->
+<div class="down">	
+<a href="student_home"><img src="/{{img}}" width="200px"></a>
+<a href="student_home"><span class=" name-caret">{{name}}</span></a>
+<p>Student</p>
+<ul>
+<li><a class="tooltips" href="student_home"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+<li><a class="tooltips" href="/"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+</ul>
+</div>
+<!--//down-->
+<div class="menu">
+<ul id="menu" >
+<li><a href="student_home"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+<li id="menu-academico" ><a href="#"><i class="fa fa-table"></i> <span> View</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+  <ul id="menu-academico-sub" >
+   <li id="menu-academico-avaliacoes" ><a href="view_subject"> Subjects</a></li>
+   <li id="menu-academico-boletim" ><a href="ask_doubts">Doubts</a></li>
+   <li id="menu-academico-boletim" ><a href="view_recommended">View Reccomended Jobs</a></li>
+
+   <li id="menu-academico-boletim" ><a href="student_question">Career Prediction</a></li>
+   <li id="menu-academico-boletim" ><a href="view_perfo">Performance Prediction</a></li>
+
+   
+ </ul>
+</li>
+
+
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>		
+</div>
+<script>
+var toggle = true;
+
+$(".sidebar-icon").click(function() {                
+if (toggle)
+{
+$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+$("#menu span").css({"position":"absolute"});
+}
+else
+{
+$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+setTimeout(function() {
+$("#menu span").css({"position":"relative"});
+}, 400);
+}
+   
+   toggle = !toggle;
+});
+</script>
+<!--js -->
+<link rel="stylesheet" href="/static/assets3/css/vroom.css">
+<script type="text/javascript" src="/static/assets3/js/vroom.js"></script>
+<script type="text/javascript" src="/static/assets3/js/TweenLite.min.js"></script>
+<script type="text/javascript" src="/static/assets3/js/CSSPlugin.min.js"></script>
+<script src="/static/assets3/js/jquery.nicescroll.js"></script>
+<script src="/static/assets3/js/scripts.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/assets3/js/bootstrap.min.js"></script>
+</body>
+</html>

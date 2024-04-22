@@ -1,0 +1,86 @@
+{% include 'hod_header.html'%}
+
+
+<div class="inner-banner py-5">
+    <section class="w3l-breadcrumb text-left py-sm-5 ">
+        <div class="container">
+            <!-- <div class="w3breadcrumb-gids">
+                <div class="w3breadcrumb-left text-left">
+                    <h2 class="inner-w3-title mt-lg-5 mt-4">
+                        Services </h2>
+
+                </div>
+                <div class="w3breadcrumb-right">
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="/hod_home">Home</a></li>
+                        <li class="active"><span class="fas fa-arrow-right mx-2"></span> Services </li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+</div>
+
+
+
+
+<!-- features-section -->
+<section class="w3l-features py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="title-content text-center mb-lg-3 mb-4">
+            <h6 class="title-subw3hny mb-1">What We Do</h6>
+            <h3 class="title-w3l">Our Services</h3>
+        </div>
+        <div class="main-cont-wthree-2">
+            <div class="row justify-content-center">
+                <form method="post">
+                    <table align="center" class="table table-striped" style="width: 500px;">
+                        <tr>
+                            <th>Select Staff</th>
+                            <td><select name="staff_id" id="" class="form form-control">
+                                {% for row in data['sel2']%}
+                                <option value="{{row['staff_id']}}">{{row['staff_name']}}</option>
+                                {%endfor%}
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th>Select Subject</th>
+                            <td><select name="sub_id" id="" class="form form-control">
+                                {% for row  in data['sel1']%}
+                                <option value="{{row['subject_id']}}">{{row['subject_name']}}</option>
+                                {%endfor%}
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" name="submit" value="submit" class="btn btn-info"></td>
+                        </tr>
+                    </table>
+                </form>
+                
+                <table align="center" class="table table-striped">
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Staff name</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                        <th>Subject Name</th>
+                    </tr>
+                    {% for row in data['view']%}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{row['staff_name']}}</td>
+                        <td>{{row['email']}}</td>
+                        <td>{{row['phone']}}</td>
+                        <td>{{row['subject_name']}}</td>
+                        <td><a href="hod_view_rating?asign_id={{ row['assign_id'] }}" class="btn btn-primary">View Ratings</a></td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//features-section -->
+
+{% include 'hod_footer.html'%}

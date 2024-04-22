@@ -1,0 +1,160 @@
+{% include 'staff_header.html'%}
+
+
+
+<div class="inner-banner py-5">
+    <section class="w3l-breadcrumb text-left py-sm-5 ">
+        <div class="container">
+            <!-- <div class="w3breadcrumb-gids">
+                <div class="w3breadcrumb-left text-left">
+                    <h2 class="inner-w3-title mt-lg-5 mt-4">
+                        Services </h2>
+
+                </div>
+                <div class="w3breadcrumb-right">
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="/staff_home">Home</a></li>
+                        <li class="active"><span class="fas fa-arrow-right mx-2"></span> Services </li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+</div>
+
+
+    <!--/features-section-->
+    <section class="w3l-features w3l-services-page py-5" id="work">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="title-content text-center mb-lg-3 mb-4">
+                <h6 class="title-subw3hny mb-1">Our Services</h6>
+                <h3 class="title-w3l">What We Offer</h3>
+            </div>
+            <div class="main-cont-wthree-2">
+                <div class="row">
+                {% if data['upd']%}
+                <form method="post" enctype="multipart/form-data">
+                    <table align="center" class="table table-striped">
+                      <!--   <tr>
+                            <th>Select Semester</th>
+                            <td><select name="sem" id="" class="form form-control">
+                                <option value="{{data['upd'][0]['semester_id']}}">{{data['upd'][0]['semester']}}</option>
+                                {%for row in data['sem']%}
+                                <option value="{{row['semester_id']}}">{{row['semester']}}</option>
+                                {%endfor%}
+                            </select></td>
+                        </tr> -->
+                        <tr>
+                            <th>Student name</th>
+                            <td><input type="text" name="name" id="" value="{{data['upd'][0]['student_name']}}" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td><input type="email" name="email" id="" value="{{data['upd'][0]['email']}}" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td><input type="number" name="phone" value="{{data['upd'][0]['phone']}}" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td><input type="file" name="img" value="{{data['upd'][0]['image']}}" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" name="update" value="update" class="btn btn-warning"></td>
+                        </tr>
+                    </table>
+                </form>
+                {% else%}
+                <form method="post" enctype="multipart/form-data">
+                    <table align="center" class="table table-striped">
+                       <!--  <tr>
+                            <th>Select Semester</th>
+                            <td><select name="sem" id="" class="form form-control">
+                                {%for row in data['sem']%}
+                                <option value="{{row['semester_id']}}">{{row['semester']}}</option>
+                                {%endfor%}
+                            </select></td>
+                        </tr> -->
+                        <tr>
+                            <th>Student name</th>
+                            <td><input type="text" name="name" id="" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td><input type="email" name="email" id="" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td><input type="number" name="phone" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td><input type="file" name="img" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Image 1</th>
+                            <td><input type="file" name="img1" id="" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Image 2</th>
+                            <td><input type="file" name="img2" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Image 3</th>
+                            <td><input type="file" name="img3" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Password</th>
+                            <td><input type="password" name="psw" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" name="submit" value="submit" class="btn btn-info"></td>
+                        </tr>
+                    </table>
+                </form>
+                {%endif%}
+                <table align="center" class="table table-striped">
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Student name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Image</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for row in data['view']%}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{row['student_name']}}</td>
+                        <td>{{row['email']}}</td>
+                        <td>{{row['phone']}}</td>
+                        <td><img src="/{{row['image']}}" alt="" width="300px"></td>
+                        <td><a href="?action=update&id={{row['student_id']}}" class="btn btn-warning">Update</a></td>
+                        <td><a href="?action=delete&id={{row['student_id']}}" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//features-section -->
+
+{% include 'footer.html'%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

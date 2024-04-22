@@ -1,0 +1,165 @@
+{% include 'student_header.html'%}
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+	<!--/bottom-grids-->		 
+    <!-- <div class="bottom-grids">
+        <div class="dev-table">    
+            <div class="col-md-4 dev-col">                                    
+
+            <div class="dev-widget dev-widget-transparent">
+                <h2 class="inner one">Server Usage</h2>
+                <p>Today server usage in percentages</p>                                        
+                <div class="dev-stat"><span class="counter">68</span>%</div>                                                                                
+                <div class="progress progress-bar-xs">
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                </div>                                        
+                <p>We Todayly recommend you change your plan to <strong>Pro</strong>. Click here to get more details.</p>
+
+            </div>
+
+        </div>
+        <div class="col-md-4 dev-col mid">                                    
+
+            <div class="dev-widget dev-widget-transparent dev-widget-success">
+                 <h3 class="inner">Today Earnings</h3>
+                <p>This is Today earnings per last year</p>                                        
+                <div class="dev-stat">$<span class="counter">75,332</span></div>                                                                                
+                <div class="progress progress-bar-xs">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 79%;"></div>
+                </div>                                        
+                <p>We happy to notice you that you become an Elite customer, and you can get some custom sugar.</p>
+
+                <a href="#" class="dev-drop">Take a closer look <span class="fa fa-angle-right pull-right"></span></a>
+            </div>
+
+        </div>
+        <div class="col-md-4 dev-col">                                    
+
+            <div class="dev-widget dev-widget-transparent dev-widget-danger">
+                 <h3 class="inner">Your Balance</h3>
+                <p>All your earnings for this time</p>
+                <div class="dev-stat">$<span class="counter">5,321</span></div>                                                                                
+                <div class="progress progress-bar-xs">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                </div>                                        
+                <p>You can withdraw this money in end of each month. Also you can spend it on our marketplace.</p>
+
+                <a href="#" class="dev-drop">Take a closer look <span class="fa fa-angle-right pull-right"></span></a>                                        
+            </div>
+
+        </div>
+        <div class="clearfix"></div>		
+        
+        </div>
+        </div> -->
+    <!--//bottom-grids-->
+
+
+
+<table align="center" class="table table-striped">
+    <tr>
+        <th>Sl no</th>
+        <th>Course name</th>
+        <th>Subject name</th>
+        <th>Department</th>
+    </tr>
+    {%  for row in data['view']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{row['course_name']}}</td>
+        <td>{{row['subject_name']}}</td>
+        <td>{{row['department']}}</td>
+    </tr>
+    {%endfor%}
+</table>
+ <!--footer section start-->
+ <footer>
+    <p>&copy 2016 Augment . All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts.</a></p>
+ </footer>
+<!--footer section end-->
+</div>
+</div>
+<!--//content-inner-->
+<!--/sidebar-menu-->
+<div class="sidebar-menu">
+<header class="logo">
+<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h1>Augment</h1></span> 
+<!--<img id="logo" src="" alt="Logo"/>--> 
+</a> 
+</header>
+<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+<!--/down-->
+<div class="down">	
+<a href="student_home"><img src="/{{img}}" width="200px"></a>
+<a href="student_home"><span class=" name-caret">{{name}}</span></a>
+<p>Student</p>
+<ul>
+ <li><a class="tooltips" href="student_home"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+ <li><a class="tooltips" href="/"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+ </ul>
+</div>
+<!--//down-->
+<div class="menu">
+<ul id="menu" >
+ <li><a href="student_home"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
+  <li id="menu-academico" ><a href="#"><i class="fa fa-table"></i> <span> View</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+    <ul id="menu-academico-sub" >
+     <li id="menu-academico-avaliacoes" ><a href="view_subject"> Subjects</a></li>
+     <li id="menu-academico-boletim" ><a href="ask_doubts">Doubts</a></li>
+     <li id="menu-academico-boletim" ><a href="view_recommended">View Reccomended Jobs</a></li>
+
+     <li id="menu-academico-boletim" ><a href="student_question">Career Prediction</a></li>
+     <li id="menu-academico-boletim" ><a href="view_perfo">Performance Prediction</a></li>
+
+     
+   </ul>
+ </li>
+ 
+
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clearfix"></div>		
+</div>
+<script>
+var toggle = true;
+ 
+$(".sidebar-icon").click(function() {                
+if (toggle)
+{
+$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+$("#menu span").css({"position":"absolute"});
+}
+else
+{
+$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+setTimeout(function() {
+$("#menu span").css({"position":"relative"});
+}, 400);
+}
+     
+     toggle = !toggle;
+ });
+</script>
+<!--js -->
+<link rel="stylesheet" href="/static/assets3/css/vroom.css">
+<script type="text/javascript" src="/static/assets3/js/vroom.js"></script>
+<script type="text/javascript" src="/static/assets3/js/TweenLite.min.js"></script>
+<script type="text/javascript" src="/static/assets3/js/CSSPlugin.min.js"></script>
+<script src="/static/assets3/js/jquery.nicescroll.js"></script>
+<script src="/static/assets3/js/scripts.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/assets3/js/bootstrap.min.js"></script>
+</body>
+</html>

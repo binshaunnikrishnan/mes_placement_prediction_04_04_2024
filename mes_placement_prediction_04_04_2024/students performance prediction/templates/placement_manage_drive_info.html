@@ -1,0 +1,80 @@
+{% include 'placement_header.html'%}
+
+
+<div class="inner-banner py-5">
+    <section class="w3l-breadcrumb text-left py-sm-5 ">
+        <div class="container">
+            
+
+        </div>
+    </section>
+</div>
+
+
+<!-- features-section -->
+<section class="w3l-features py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="title-content text-center mb-lg-3 mb-4">
+            <!-- <h6 class="title-subw3hny mb-1">What We Do</h6>
+            <h3 class="title-w3l">Our Services</h3> -->
+        </div>
+        <div class="main-cont-wthree-2">
+            <div class="row justify-content-center">
+ 
+<form method="post">
+    <table align="center" class="table table-striped">
+        <tr>
+            <th>Select company</th>
+            <td><select name="company" id="" class="form form-control">
+                {% for row in data['sel']%}
+                <option value="{{row['company_id']}}">{{row['company_name']}}</option>
+                {%endfor%}
+            </select></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td><input type="text" name="desc" class="form form-control"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="submit" id="" value="submit" class="btn btn-info"></td>
+        </tr>
+    </table>
+</form>
+
+<table  align="center" class="table table-striped">
+    <tr>
+        <th>Sl no</th>
+        <th>
+            Company name
+        </th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    {% for row in data['view']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{row['company_name']}}</td>
+        <td>{{row['description']}}</td>
+        {% if row['status']=='active'%}
+        <td>{{row['status']}}</td>
+        <td><a href="?action=deactivate&id1={{row['placement_details_id']}}" class="btn btn-danger">Deactivate</a></td>
+        {%elif row['status']=='expired'%}
+        <td><a href="view_applied_students?id1={{row['placement_details_id']}}" class="btn btn-info">View Applied Students</a></td>
+        <td>{{row['status']}}</td>
+        {%endif%}
+    </tr>
+    {%endfor%}
+</table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//features-section -->
+
+
+
+
+
+
+
+{% include 'placement_footer.html'%}

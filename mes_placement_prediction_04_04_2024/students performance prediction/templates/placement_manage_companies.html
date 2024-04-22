@@ -1,0 +1,94 @@
+{% include 'placement_header.html'%}
+
+
+<div class="inner-banner py-5">
+    <section class="w3l-breadcrumb text-left py-sm-5 ">
+        <div class="container">
+           
+
+        </div>
+    </section>
+</div>
+
+
+
+
+<!-- features-section -->
+<section class="w3l-features py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="title-content text-center mb-lg-3 mb-4">
+            <!-- <h6 class="title-subw3hny mb-1">What We Do</h6>
+            <h3 class="title-w3l">Our Services</h3> -->
+        </div>
+        <div class="main-cont-wthree-2">
+            <div class="row justify-content-center">
+                {% if data['upd']%}
+                <form method="post">
+                    <table align="center" class="table table-striped">
+                        <tr>
+                            <th>Company name</th>
+                            <td><input type="text" name="c_name" value="{{data['upd'][0]['company_name']}}" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Place</th>
+                            <td><input type="text" name="place" id="" value="{{data['upd'][0]['place']}}" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td><textarea name="addr" id="" cols="30" rows="10" class="form form-control"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" name="update" value="update" class="btn btn-warning"></td>
+                        </tr>
+                    </table>
+                </form>
+                {%else%}
+                <form method="post">
+                    <table align="center" class="table table-striped">
+                        <tr>
+                            <th>Company name</th>
+                            <td><input type="text" name="c_name" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Place</th>
+                            <td><input type="text" name="place" id="" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td><textarea name="addr" id="" cols="30" rows="10" class="form form-control"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" name="submit" value="submit" class="btn btn-info"></td>
+                        </tr>
+                    </table>
+                </form>
+                {%endif%}
+                <table align="center" class="table table-striped">
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Company name</th>
+                        <th>Place</th>
+                        <th>Address</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for row in data['view']%}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{row['company_name']}}</td>
+                        <td>{{row['place']}}</td>
+                        <td>{{row['address']}}</td>
+                        <td><a href="?action=update&id1={{row['company_id']}}" class="btn btn-warning">Update</a></td>
+                        <td><a href="?action=delete&id1={{row['company_id']}}" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//features-section -->
+
+
+
+{% include 'placement_footer.html'%}

@@ -1,0 +1,140 @@
+{% include 'admin_header.html' %}
+
+
+
+<center>
+<section id="main-content">
+	<section class="wrapper" style="background-color: aliceblue;">
+
+
+
+
+            <div class="col-md-8 stats-info stats-last widget-shadow">
+                <div class="stats-last-agile">
+                    <h1>Manage HOD</h1>
+                    <br>
+                    <br>
+                    {%if data['upda']%}
+                    <form action="" method="post">
+                    
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Department Name</th>
+                                <td><input type="text" name="department" id="" class="form form-control" value="{{data['upda'][0]['department']}}"></td>
+                            </tr>
+                            <tr>
+                                <th>Hod Name</th>
+                                <td><input type="text" name="hod_name" id="" class="form form-control" value="{{data['upda'][0]['hod_name']}}"></td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td><input type="number" name="phone" id="" class="form form-control" value="{{data['upda'][0]['phone']}}"></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td><input type="email" name="email" id="" class="form form-control" value="{{data['upda'][0]['email']}}"></td>
+                            </tr>
+                        
+                           
+                            <tr>
+                                <td><input type="submit" name="update" value="update" id="" class="btn btn-info"></td>
+                            </tr>
+                            
+                            
+                        </table>
+                    </form>
+
+
+                    {% elif data['add_hod']==1 %}
+                    <a href="?action=view_hod" class="btn btn-warning">View HOD</a>
+                    <br>
+
+                    <form action="" method="post">
+                    
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Department Name</th>
+                                <td><input type="text" name="department" id="" class="form form-control"></td>
+                            </tr>
+                            <tr>
+                                <th>Hod Name</th>
+                                <td><input type="text" name="hod_name" id="" class="form form-control"></td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td><input type="number" name="phone" id="" class="form form-control"></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td><input type="email" name="email" id="" class="form form-control"></td>
+                            </tr>
+                        
+                            <tr>
+                                <th>Password</th>
+                                <td><input type="password" name="passw" id="" class="form form-control"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" name="hod_reg" value="Add" id="" class="btn btn-info"></td>
+                            </tr>
+                            
+                            
+                        </table>
+                    </form>
+                    
+                    {% else %}
+                    <a href="?action=add_hod" class="btn btn-warning">Add HOD</a>
+                    <br>
+                    <table class="table " >
+                        <tr>
+                            <th>SL No.</th>
+                            <th>Department Name</th>
+                            <th>Hod Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th></th>
+                        </tr>
+                        {% for row in data['hod'] %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ row['department'] }}</td>
+                            <td>{{ row['name'] }}</td>
+                            <td>{{ row['email'] }}</td>
+                            <td>{{ row['phone'] }}</td>
+                            <td><a href="?actions=update&id={{row['login_id']}}" class="btn btn-info">update</a></td>
+                            <td><a href="?actions=delete&id={{row['login_id']}}" class="btn btn-warning">delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </form>
+
+                    {% endif %}
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            </div>
+    </section>
+</section>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{%include 'admin_footer.html'%}
+
+
+
+
+
+

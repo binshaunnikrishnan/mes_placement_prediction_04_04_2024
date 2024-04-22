@@ -1,0 +1,57 @@
+{% include 'admin_header.html' %}
+
+
+
+
+<center>
+    <section id="main-content">
+        <section class="wrapper">
+    
+    
+    
+    
+                <div class="col-md-8 stats-info stats-last widget-shadow">
+                    <div class="stats-last-agile">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Sl no</th>
+                                <th>Student Name</th>
+                                <th>Date</th>
+                                <th>Rating</th>
+                            </tr>
+                            {%for row  in data['view']%}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{row['student_name']}}</td>
+                                <td>{{row['date']}}</td>
+                                <td>{{row['ratings']}}/5</td>
+                            </tr>
+                            {%endfor%}
+                        </table>
+                        
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+                </div>
+        </section>
+    </section>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+
+    {%include 'admin_footer.html'%}
+
+ 

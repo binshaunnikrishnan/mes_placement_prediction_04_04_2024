@@ -1,0 +1,125 @@
+{% include 'admin_header.html' %}
+
+
+
+
+<center>
+    <section id="main-content">
+        <section class="wrapper" style="background-color: aliceblue;">
+    
+    
+    
+    
+                <div class="col-md-8 stats-info stats-last widget-shadow">
+                    <div class="stats-last-agile">
+                        <h1>Manage Placement Cell</h1>
+                        <br>
+                        <br>
+                        {%if data['upda']%}
+                        <form action="" method="post">
+                           
+                            <table class="table table-striped">
+                               
+                                <tr>
+                                    <th>Placement Cell Name</th>
+                                    <td><input type="text" name="placement_cell_name" id="" value="{{data['upda'][0]['cell_name']}}" class="form form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th>Phone</th>
+                                    <td><input type="number" name="phone" id="" value="{{data['upda'][0]['phone']}}" class="form form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><input type="email" name="email" id="" value="{{data['upda'][0]['email']}}" class="form form-control"></td>
+                                </tr>
+                               
+                                
+                                <tr>
+                                    <td><input type="submit" name="update" value="Update" id="" class="btn btn-info"></td>
+                                </tr>
+                                
+                            </table>
+                        </form>
+
+
+
+                        {% elif data['add_placement_cell']==1 %}
+                        <a href="?action=view_placement_cell" class="btn btn-warning">View Placement Cell</a>
+                        
+                        <form action="" method="post">
+                           
+                            <table class="table table-striped">
+                               
+                                <tr>
+                                    <th>Placement Cell Name</th>
+                                    <td><input type="text" name="placement_cell_name" id="" class="form form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th>Phone</th>
+                                    <td><input type="number" name="phone" id="" class="form form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><input type="email" name="email" id="" class="form form-control"></td>
+                                </tr>
+                               
+                                <tr>
+                                    <th>Password</th>
+                                    <td><input type="password" name="passw" id="" class="form form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" name="placement_cell_reg" value="Add" id="" class="btn btn-info"></td>
+                                </tr>
+                                
+                            </table>
+                        </form>
+                        {% else %}
+                        <a href="?action=add_placement_cell" class="btn btn-warning">Add Placement Cell</a>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>SL No.</th>
+                                <th>Placement Cell Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                            {% for row in data['placement_cell'] %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ row['cell_name'] }}</td>
+                                <td>{{ row['email'] }}</td>
+                                <td>{{ row['phone'] }}</td>
+                                <td><a href="?actions=update&id={{row['login_id']}}" class="btn btn-info">update</a></td>
+                                <td><a href="?actions=delete&id={{row['login_id']}}" class="btn btn-warning">delete</a></td>
+                          
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        
+                        {% endif %}
+                        
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+                </div>
+        </section>
+    </section>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+
+    {%include 'admin_footer.html'%}
+
+

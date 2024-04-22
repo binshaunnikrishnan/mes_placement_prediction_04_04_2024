@@ -1,0 +1,63 @@
+{% include 'admin_header.html' %}
+
+
+
+
+<center>
+    <section id="main-content">
+        <section class="wrapper">
+    
+    
+    
+    
+                <div class="col-md-8 stats-info stats-last widget-shadow">
+                    <div class="stats-last-agile">
+                        <table align="center" class="table table-striped">
+                            <tr>
+                                <th>Sl no</th>
+                                <th>Student name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Subject Name</th>
+                                <th>Predicted Output</th>
+                                <th>Predicted Percentage</th>
+                            </tr>
+                            {% for row in data['view']%}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{row['student_name']}}</td>
+                                <td>{{row['email']}}</td>
+                                <td>{{row['phone']}}</td>
+                                <td>{{row['subject_name']}}</td>
+                                <td>{{row['output']}}</td>
+                                <td>{{row['percent']}}</td>
+                            </tr>
+                            {%endfor%}
+                        </table>
+                        
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+                </div>
+        </section>
+    </section>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+
+    {%include 'admin_footer.html'%}
+
+

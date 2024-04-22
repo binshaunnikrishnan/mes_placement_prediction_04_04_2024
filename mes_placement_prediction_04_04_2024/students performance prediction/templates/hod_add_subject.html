@@ -1,0 +1,121 @@
+{% include 'hod_header.html'%}
+
+
+
+
+<div class="inner-banner py-5">
+    <section class="w3l-breadcrumb text-left py-sm-5 ">
+        <div class="container">
+            <!-- <div class="w3breadcrumb-gids">
+                <div class="w3breadcrumb-left text-left">
+                    <h2 class="inner-w3-title mt-lg-5 mt-4">
+                        Services </h2>
+
+                </div>
+                <div class="w3breadcrumb-right">
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="/hod_home">Home</a></li>
+                        <li class="active"><span class="fas fa-arrow-right mx-2"></span> Services </li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+</div>
+
+
+
+
+<!-- features-section -->
+<section class="w3l-features py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="title-content text-center mb-lg-3 mb-4">
+            <h6 class="title-subw3hny mb-1">What We Do</h6>
+            <h3 class="title-w3l">Our Services</h3>
+        </div>
+        <div class="main-cont-wthree-2">
+            <div class="row justify-content-center">
+                {% if data['upd']%}
+                <form method="post">
+                    <table align="center" class="table table-striped">
+                        <tr>
+                            <th>Subject Name</th>
+                            <td><input type="text" name="sub_name" value="{{data['upd'][0]['subject_name']}}" class="form form-control"></td>
+                            <td>
+                                    <select name="sub_name" id="">
+                                        <option value=""></option>
+                                    </select>
+
+                            </td>
+                       
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" name="update" id="" value="update" class="btn btn-warning"></td>
+                        </tr>
+                    </table>
+                </form>
+                {%else%}
+                <form method="post">
+                    <table align="center" class="table table-striped">
+                       <!--  <tr>
+                            <th>Select Semester</th>
+                            <td><select name="sem" id="" class="form form-control">
+                                {%for row in data['sem']%}
+                                <option value="{{row['semester_id']}}">{{row['semester']}}</option>
+                                {%endfor%}
+                            </select></td>
+                        </tr> -->
+                        <tr>
+                            <th>Select Course</th>
+                            <td><select name="course" id="" class="form form-control">
+                                {% for row in data['sel']%}
+                                <option value="{{row['course_id']}}">{{row['course_name']}}</option>
+                                {%endfor%}
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th>Add subject</th>
+                            <td><input type="text" name="sub_name" class="form form-control"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" name="submit" value="submit" class="btn btn-info"></td>
+                        </tr>
+                    </table>
+                </form>
+                {%endif%}
+                <table align="center" class="table table-striped">
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Course name</th>
+                        <th>Subjects</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for row in data['view']%}
+                    <tr>
+                        <th>{{loop.index}}</th>
+                        <th>{{row['course_name']}}</th>
+                        <th>{{row['subject_name']}}</th>
+                        <th><a href="?action=update&id={{row['subject_id']}}" class="btn btn-warning">Update</a></th>
+                        <th><a href="?action=delete&id={{row['subject_id']}}" class="btn btn-danger">Delete</a></th>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//features-section -->
+
+
+
+
+
+
+
+
+
+
+
+{% include 'hod_footer.html'%}
